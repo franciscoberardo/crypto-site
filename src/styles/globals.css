@@ -2,20 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* styles.css */
+.table-bordered-gradient {
+    border-style: solid;
+    border-width: 4px;
+    border-image: linear-gradient(to right, #ff1493, #0000ff);
+    border-image-slice: 1;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  

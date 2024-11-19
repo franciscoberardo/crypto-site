@@ -1,8 +1,8 @@
 import React from 'react';
 
 const Navbar = () => (
-  <nav className="flex items-center justify-between px-20 py-1 shadow-md">
-    <div className="text-2xl font-sans font-bold">C L I P T O</div>
+  <nav className="flex items-center justify-between px-20 py-5 shadow-md text-2xl">
+    <div className="font-sans font-bold text-white">C L I P T O</div>
     <ul className="flex space-x-6 text-gray-600">
       <li className="hover:text-blue-500 cursor-pointer">Home</li>
       <li className="hover:text-blue-500 cursor-pointer">Products</li>
