@@ -12,6 +12,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        sans: ['Roboto', 'sans-serif'],
+        alegreya: ['Alegreya', 'serif'],
+        oleo: ['"Oleo Script"', 'cursive'],
+      },
     },
   },
   plugins: [],
