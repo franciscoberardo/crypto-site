@@ -1,50 +1,47 @@
 const About = () => {
     return (
         <section className="flex flex-col items-center justify-center min-h-screen text-center py-48 bg-black text-white">
-            <h2 className="text-6xl font-semibold mb-4">
+            <h2 className="text-6xl font-semibold mb-4 w-3/4">
                 Liderando el futuro de las inversiones en criptomonedas
             </h2>
 
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-lg text-gray-400 mb-6">
                 Explicación de la propuesta de valor, como asesoramiento personalizado y experiencia en blockchain
             </p>
 
-            <div className="overflow-x-auto w-3/4 text-3xl ">
-                <table className="min-w-full text-center border-separate" style={{ borderSpacing: '0 10px' }}>
+            <div className="overflow-x-auto w-3/4 text-xl">
+                <table className="min-w-full text-center border-separate border-[4px] rounded-lg bg-gradient-to-r from-pink-500 to-blue-500">
                     <thead>
+                        <tr className="bg-black text-white">
+                        </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="bg-black text-white">
                         <tr>
-                            <td className="py-16 px-4 py-2 table-bordered-gradient">
-                                ~$300 billion
-                                <p>cumulative trading
-                                    volume to date</p>
+                            <td className="px-4 py-6 hover:bg-gradient-to-r hover:from-pink-500 hover:to-blue-500 hover:text-white transition-colors duration-300">
+                                <p className="font-bold text-2xl">~$300 billion</p>
+                                <p className="text-gray-400 text-md">cumulative trading volume to date</p>
                             </td>
-                            <td className="px-4 py-2 table-bordered-gradient">
-                                <h1>1 %</h1>
-                                <p>of the global crypto spot trading volume</p>
+                            <td className="px-4 py-6 hover:bg-gradient-to-r hover:from-pink-500 hover:to-blue-500 hover:text-white transition-colors duration-300">
+                                <h1 className="font-bold text-2xl">1 %</h1>
+                                <p className="text-md text-gray-400">of the global crypto spot trading volume</p>
                             </td>
-                            <td className="px-4 py-2 table-bordered-gradient">
-                                <h1>~60</h1>
-                                <p>Gravity Teammates(& growing)</p>
+                            <td className="px-4 py-6 hover:bg-gradient-to-r hover:from-pink-500 hover:to-blue-500 hover:text-white transition-colors duration-300">
+                                <h1 className="font-bold text-2xl">~60</h1>
+                                <p className="text-md text-gray-400">Gravity Teammates (& growing)</p>
                             </td>
                         </tr>
                         <tr>
-                            <td className=" py-16 px-4 py-2 table-bordered-gradient">
-                                30+
-                                <p>leading global and local crypto exchanges</p>
+                            <td className="px-4 py-6 hover:bg-gradient-to-r hover:from-pink-500 hover:to-blue-500 hover:text-white transition-colors duration-300">
+                                <p className="font-bold text-2xl">30+</p>
+                                <p className="text-md text-gray-400">leading global and local crypto exchanges</p>
                             </td>
-                            <td className="px-4 py-2 table-bordered-gradient">
-                                <h1>2017
-                                </h1>
-                                <p>start, crypto-natives
-                                </p>
+                            <td className="px-4 py-6 hover:bg-gradient-to-r hover:from-pink-500 hover:to-blue-500 hover:text-white transition-colors duration-300">
+                                <h1 className="font-bold text-2xl">2017</h1>
+                                <p className="text-md text-gray-400">start, crypto-natives</p>
                             </td>
-                            <td className="px-4 py-2 table-bordered-gradient">
-                                <h1>24/7
-                                </h1>
-                                <p>liquidity
-                                </p>
+                            <td className="px-4 py-6 hover:bg-gradient-to-r hover:from-pink-500 hover:to-blue-500 hover:text-white transition-colors duration-300">
+                                <h1 className="font-bold text-2xl">24/7</h1>
+                                <p className="text-md text-gray-400">liquidity</p>
                             </td>
                         </tr>
                     </tbody>

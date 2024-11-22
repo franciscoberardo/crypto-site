@@ -4,15 +4,16 @@ import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import InfiniteScroll from "@/components/InfiniteScroll";
 import About from "@/components/About";
+import FAQ from "@/components/FAQ";
 
 
 export default function Home() {
   return (
-    <div className="bg-black">
-      <Navbar />
+    <div className="">
       <Header />
       <InfiniteScroll />
       <About />
+      <FAQ />
     </div>
   );
 }

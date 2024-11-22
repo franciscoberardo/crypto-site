@@ -1,40 +1,49 @@
 import { motion } from 'framer-motion';
+import Navbar from "@/components/Navbar";
+import Button from "@/components/Button";
 
 const Header = () => (
-    <header className="flex flex-col py-10 items-center text-center text-white bg-black">
-        <h1 className="text-8xl font-bold mb-4 w-5/6">
-            Increase your capital with{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500">
-                cryptocurrency
-            </span>
-        </h1>
-        <p className="mb-6 text-lg text-gray-600">Start trading and managing digital assets securely.</p>
+    <motion.div style={{
+      background: `
+        radial-gradient(circle at -25% -50%, #00f0ff 20%, #fff0 37%),
+        radial-gradient(circle at 125% 150%, #00f0ff 20%, #fff0 37%)`,
+      backgroundColor: 'black',
+    }}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+            <Navbar />
 
-        {/* Botón con transiciones usando Framer Motion */}
-        <motion.button
-            className="relative px-6 py-3 text-white font-semibold rounded-lg shadow-lg overflow-hidden"
-            initial={{ background: 'linear-gradient(to right, #ff007f, #00f0ff)' }}
-            whileHover={{ background: 'linear-gradient(to right, #000000, #000000)',border: 'white' }}
-            transition={{ duration: 0.3 }}
-        >
-            {/* Capa que cambia de izquierda a derecha */}
-            <span className="absolute inset-0 w-full h-full bg-black transform -translate-x-full motion-safe:group-hover:translate-x-0 transition-transform duration-500 ease-in-out"></span>
-            <span className="relative">Get Started</span>
-        </motion.button>
+  <motion.header
+    className="relative flex flex-col py-10 items-center text-center text-white">
+    <h1 className="text-7xl 2xl:text-9xl font-bold mb-4 w-5/6">
+      Increase your capital with{' '}
+      <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-blue-500">
+        cryptocurrency
+      </span>
+    </h1>
+    <p className="mb-6 text-3xl text-gray-300 w-2/4">
+      Kava is a decentralized blockchain that combines the speed and interoperability of Cosmos with the developer power of Ethereum.
+    </p>
 
-        <div className="mt-8 w-2/4">
-            <video
-                className="h-auto rounded-lg shadow-lg"
-                autoPlay
-                loop
-                muted
-                playsInline
-            >
-                <source src="/vide3.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </header>
+    {/* Botón con transiciones usando Framer Motion */}
+    <Button title="Get Started" />
+
+    <div className="mt-8 w-2/4">
+      <video
+        className="h-auto rounded-lg shadow-lg"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/vide3.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </motion.header>
+  </motion.div>
 );
 
 export default Header;
