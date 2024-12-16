@@ -36,36 +36,65 @@ const testimonialsData = [
 const Testimonials = () => {
   return (
     <div className="bg-black text-white min-h-screen flex flex-col items-center mt-10">
-      <div className="w-screen flex items-center justify-center relative">
-        <div className="flex flex-col items-center text-center space-y-4">
+      {/* Header */}
+      <motion.div
+        className="w-screen flex items-center justify-center relative"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ staggerChildren: 0.3 }}
+      >
+        <motion.div
+          className="flex flex-col items-center text-center space-y-4"
+          variants={{
+            hidden: { opacity: 0, y: 50 },
+            visible: { opacity: 1, y: 0 },
+          }}
+        >
           <h1 className="font-bold text-sky-blue-transparent text-2xl text-center">
             TESTIMONIALS
           </h1>
           <motion.h1
             className="text-5xl font-bold px-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 1 }}
           >
             What Our Clients Say
           </motion.h1>
           <motion.p
             className="text-lg px-4 max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1, ease: "easeInOut" }}
+            variants={{
+              hidden: { opacity: 0, y: 50 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 1.2 }}
           >
             "Our crypto investment strategies have helped countless clients grow their wealth in this exciting and fast-paced market. Don't just take our word for it—see what our clients have to say about their success!"
           </motion.p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="w-4/5 py-10 px-4">
+      {/* Testimonials Grid */}
+      <motion.div
+        className="w-4/5 py-10 px-4"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ staggerChildren: 0.2 }}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonialsData.map((testimonial, index) => (
-            <div
+            <motion.div
               key={index}
               className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all"
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <div className="flex justify-center mb-4">
                 <img
@@ -80,10 +109,10 @@ const Testimonials = () => {
               <p className="text-gray-300 italic">
                 {testimonial.testimonial}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
