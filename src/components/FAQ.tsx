@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
   const toggleQuestion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -36,18 +38,43 @@ const FAQ = () => {
     },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 100 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 50,
+        damping: 15,
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50 } },
+  };
+
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen py-12 bg-black text-white">
-      <div className="w-4/5 max-w-5xl flex flex-col md:flex-row gap-8">
+    <motion.section
+      ref={ref}
+      className="flex flex-col items-center justify-center min-h-screen py-12 bg-black text-white"
+      variants={containerVariants}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+    >
+      <div className="w-4/5 max-w-7xl flex flex-col lg:flex-row gap-8">
         {/* Left Column: Questions */}
-        <div className="flex-1">
+        <motion.div className="flex-1" variants={containerVariants}>
           {questions.map((item, index) => (
             <motion.div
               key={index}
               className="relative mb-4 p-[2px] bg-gradient-to-r from-green-400 to-blue-500"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              variants={itemVariants}
             >
               <div
                 className="flex justify-between items-center p-4 cursor-pointer bg-black"
@@ -93,11 +120,16 @@ const FAQ = () => {
               </AnimatePresence>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Right Column: Additional Text */}
-        <div className="flex-1 flex flex-col items-start p-6">
-          <p className="text-6xl font-semibold mb-4">FAQ's</p>
+        <motion.div
+          className="flex-1 flex flex-col items-start p-6"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -50 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <p className="text-4xl md:text-6xl font-semibold mb-4">FAQ's</p>
           <p className="text-lg text-gray-300 mb-4">
             We specialize in empowering individuals and businesses to make
             informed decisions in the dynamic world of cryptocurrencies. From
@@ -108,9 +140,9 @@ const FAQ = () => {
             If your question isn't answered here, feel free to reach out to us
             through our contact page. We're here to help you succeed.
           </p>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

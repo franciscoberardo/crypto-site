@@ -7,7 +7,7 @@ const Features = () => {
             className="bg-black text-white min-h-screen flex flex-col items-center mt-10"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }} // Activa al estar 50% visible
+            viewport={{ once: true }}
             variants={{
                 hidden: { opacity: 0 },
                 visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
@@ -27,7 +27,7 @@ const Features = () => {
                         CRYPTO FEATURE
                     </motion.h1>
                     <motion.h1
-                        className="text-5xl font-bold px-4"
+                        className="text-4xl md:text-5xl font-bold px-4"
                         variants={{
                             hidden: { y: 50, opacity: 0 },
                             visible: { y: 0, opacity: 1 },
