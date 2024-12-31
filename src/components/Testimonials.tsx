@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const testimonialsData = [
   {
     name: "John Doe",
     image: "https://randomuser.me/api/portraits/men/1.jpg",
-    testimonial: "Thanks to this incredible consultancy, I've been able to maximize my crypto portfolio. The advice is always spot on and tailored to my risk profile.",
+    testimonial: "Thanks to this incredible consultancy, I&apos;ve been able to maximize my crypto portfolio. The advice is always spot on and tailored to my risk profile.",
   },
   {
     name: "Emma Smith",
@@ -72,7 +73,7 @@ const Testimonials = () => {
             }}
             transition={{ duration: 1.2 }}
           >
-            "Our crypto investment strategies have helped countless clients grow their wealth in this exciting and fast-paced market. Don't just take our word for it—see what our clients have to say about their success!"
+            &quot;Our crypto investment strategies have helped countless clients grow their wealth in this exciting and fast-paced market. Don&apos;t just take our word for it—see what our clients have to say about their success!&quot;
           </motion.p>
         </motion.div>
       </motion.div>
@@ -86,10 +87,12 @@ const Testimonials = () => {
               className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all"
             >
               <div className="flex justify-center mb-4">
-                <img
+                <Image
                   src={testimonial.image}
                   alt={`Client ${index + 1}`}
                   className="w-16 h-16 rounded-full object-cover"
+                  width={64}
+                  height={64}
                 />
               </div>
               <h3 className="text-xl font-semibold text-sky-400 mb-2">

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 
-const FAQ = () => {
+const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
@@ -24,7 +25,7 @@ const FAQ = () => {
     {
       question: "How safe is investing in cryptocurrency?",
       answer:
-        "While the blockchain technology behind cryptocurrencies is secure, investing involves risks. It's crucial to conduct thorough research and seek advice from experts.",
+        "While the blockchain technology behind cryptocurrencies is secure, investing involves risks. It&apos;s crucial to conduct thorough research and seek advice from experts.",
     },
     {
       question: "How can I start investing in cryptocurrencies?",
@@ -129,7 +130,7 @@ const FAQ = () => {
           animate={{ opacity: inView ? 1 : 0, x: inView ? 0 : -50 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <p className="text-4xl md:text-6xl font-semibold mb-4">FAQ's</p>
+          <p className="text-4xl md:text-6xl font-semibold mb-4">FAQ&apos;s</p>
           <p className="text-lg text-gray-300 mb-4">
             We specialize in empowering individuals and businesses to make
             informed decisions in the dynamic world of cryptocurrencies. From
@@ -137,8 +138,8 @@ const FAQ = () => {
             step of the way.
           </p>
           <p className="text-lg text-gray-300">
-            If your question isn't answered here, feel free to reach out to us
-            through our contact page. We're here to help you succeed.
+            If your question isn&apos;t answered here, feel free to reach out to us
+            through our contact page. We&apos;re here to help you succeed.
           </p>
         </motion.div>
       </div>
