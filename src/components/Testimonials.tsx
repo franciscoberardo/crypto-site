@@ -1,35 +1,36 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import CarouselSize from "./CarouselSize";
 
 const testimonialsData = [
   {
     name: "John Doe",
-    image: "https://randomuser.me/api/portraits/men/1.jpg",
+    image: "https://picsum.photos/id/1005/64/64", // Hombre joven
     testimonial: "Thanks to this incredible consultancy, I&apos;ve been able to maximize my crypto portfolio. The advice is always spot on and tailored to my risk profile.",
   },
   {
     name: "Emma Smith",
-    image: "https://randomuser.me/api/portraits/women/2.jpg",
+    image: "https://picsum.photos/id/1027/64/64", // Mujer con cabello oscuro
     testimonial: "I’ve never been more confident in my investments. This team’s market analysis is top-notch, and I’ve seen a significant return on my investment in a short time.",
   },
   {
     name: "David Johnson",
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
+    image: "https://picsum.photos/id/1001/64/64", // Hombre con barba
     testimonial: "As someone new to crypto, I was initially hesitant, but this consultancy helped me understand the market and build a solid investment strategy. My profits have been impressive!",
   },
   {
     name: "Sophia Williams",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    image: "https://picsum.photos/id/1012/64/64", // Mujer profesional rubia
     testimonial: "The team provided clear and insightful advice that has helped me diversify my investments and reduce my risks in the crypto market. Highly recommended!",
   },
   {
     name: "Michael Brown",
-    image: "https://randomuser.me/api/portraits/men/4.jpg",
+    image: "https://picsum.photos/id/1021/64/64", // Hombre de mediana edad
     testimonial: "Incredible experience! The team at this consultancy provides timely updates and valuable insights that have made a huge difference in my portfolio’s growth.",
   },
   {
     name: "Isabella Garcia",
-    image: "https://randomuser.me/api/portraits/women/5.jpg",
+    image: "https://picsum.photos/id/1011/64/64", // Mujer joven sonriente
     testimonial: "I’ve been working with this consultancy for several months, and the growth in my crypto investments speaks for itself. They really know the market.",
   },
 ];

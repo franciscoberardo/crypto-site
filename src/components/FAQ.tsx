@@ -62,7 +62,7 @@ const FAQ: React.FC = () => {
   return (
     <motion.section
       ref={ref}
-      className="flex flex-col items-center justify-center min-h-screen py-12 bg-black text-white"
+      className="flex flex-col items-center justify-center min-h-screen py-2 bg-black text-white"
       variants={containerVariants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
