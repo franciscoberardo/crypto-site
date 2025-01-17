@@ -8,12 +8,13 @@ const Contact = () => {
     message: '',
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
+  
 
   return (
     <section className="py-6 px-3 md:py-8 md:px-4">
