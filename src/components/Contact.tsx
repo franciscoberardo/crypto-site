@@ -15,11 +15,6 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData); // Manejo del envío del formulario
-  };
-
   return (
     <section className="py-6 px-3 md:py-8 md:px-4">
       <div className="max-w-5xl mx-auto grid grid-cols-1 gap-4 items-center">
