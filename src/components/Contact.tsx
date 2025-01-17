@@ -8,12 +8,12 @@ const Contact = () => {
     message: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-  };
+  }; 
   
 
   return (
@@ -84,7 +84,7 @@ const Contact = () => {
           <textarea
             id="message"
             name="message"
-            rows="4"
+            rows={4}
             className="w-full bg-slate-800 p-2 border-2 border-blue-500 rounded-md"
             placeholder="Your message"
             value={formData.message}
