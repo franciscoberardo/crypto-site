@@ -7,18 +7,31 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  const [submitted, setSubmitted] = useState(false); // Estado para mostrar el mensaje de confirmación
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-  }; 
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitted(true); // Muestra el mensaje de confirmación
+    setFormData({ name: '', email: '', message: '' }); // Limpia los campos del formulario
+    setTimeout(() => setSubmitted(false), 3000); // Oculta el mensaje después de 3 segundos
+  };
   
 
   return (
     <section className="py-6 px-3 md:py-8 md:px-4">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 gap-4 items-center">
+      <form
+        className="max-w-5xl mx-auto grid grid-cols-1 gap-4 items-center"
+        onSubmit={handleSubmit}
+      >
         {/* Título principal */}
         <motion.div
           className="text-center mb-6"
@@ -44,7 +57,7 @@ const Contact = () => {
               type="text"
               id="name"
               name="name"
-              className="w-full bg-slate-800 p-2 border-2 border-blue-500 rounded-md"
+              className="w-full bg-slate-800 p-2 border-2 border-blue-500 rounded-md text-white"
               placeholder="Your name"
               value={formData.name}
               onChange={handleChange}
@@ -64,7 +77,7 @@ const Contact = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full bg-slate-800 p-2 border-2 border-blue-500 rounded-md"
+              className="w-full bg-slate-800 p-2 border-2 border-blue-500 rounded-md text-white"
               placeholder="Your email"
               value={formData.email}
               onChange={handleChange}
@@ -85,7 +98,7 @@ const Contact = () => {
             id="message"
             name="message"
             rows={4}
-            className="w-full bg-slate-800 p-2 border-2 border-blue-500 rounded-md"
+            className="w-full bg-slate-800 p-2 border-2 border-blue-500 rounded-md text-white"
             placeholder="Your message"
             value={formData.message}
             onChange={handleChange}
@@ -109,7 +122,19 @@ const Contact = () => {
             Send message
           </motion.button>
         </motion.div>
-      </div>
+
+        {/* Mensaje de confirmación */}
+        {submitted && (
+          <motion.div
+            className="text-center mt-4 text-green-500"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            Message sent successfully!
+          </motion.div>
+        )}
+      </form>
     </section>
   );
 };
