@@ -3,19 +3,13 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/f
 
 const Footer = () => {
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: any) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false); // Cierra el menú si está abierto
     }
   };
+  
   return (
     <footer className="bg-black text-gray-300 py-10 relative">
       <div className="inset-0 bg-black flex flex-col items-center justify-center space-y-8 my-4">
