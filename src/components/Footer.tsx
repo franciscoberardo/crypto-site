@@ -1,12 +1,26 @@
+import React, { useState } from "react";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false); // Cierra el menú si está abierto
+    }
+  };
   return (
     <footer className="bg-black text-gray-300 py-10 relative">
       <div className="inset-0 bg-black flex flex-col items-center justify-center space-y-8 my-4">
-        <div
-          className="w-5/6 h-0.5 bg-white items-center"
-        ></div></div>
+        <div className="w-5/6 h-0.5 bg-white items-center"></div>
+      </div>
       <div className="relative container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Columna 1: Logo y descripción */}
         <div className="flex flex-col items-center md:items-start">
@@ -20,24 +34,36 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
           <ul className="space-y-2 text-center">
             <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                About Us
-              </a>
+              <span
+                className="hover:text-blue-500 transition-colors cursor-pointer"
+                onClick={() => scrollToSection("features")}
+              >
+                Features
+              </span>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Services
-              </a>
+              <span
+                className="hover:text-blue-500 transition-colors cursor-pointer"
+                onClick={() => scrollToSection("testimonials")}
+              >
+                Testimonials
+              </span>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
-                Contact
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-blue-500 transition-colors">
+              <span
+                className="hover:text-blue-500 transition-colors cursor-pointer"
+                onClick={() => scrollToSection("faq")}
+              >
                 FAQ
-              </a>
+              </span>
+            </li>
+            <li>
+              <span
+                className="hover:text-blue-500 transition-colors cursor-pointer"
+                onClick={() => scrollToSection("contact")}
+              >
+                Contact
+              </span>
             </li>
           </ul>
         </div>

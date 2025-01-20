@@ -9,10 +9,18 @@ export default function Home() {
   return (
     <div className="bg-black">
       <Header />
-      <Features />
-      <Testimonials />
-      <FAQ />
-      <Contact />
+      <section id="features">
+        <Features />
+      </section>
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+      <section id="faq">
+        <FAQ />
+      </section>
+      <section id="contact">
+        <Contact />
+      </section>
       <Footer />
     </div>
   );
