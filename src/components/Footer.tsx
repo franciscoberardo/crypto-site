@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
 
-  const scrollToSection = (id: any) => {
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
-  
+
   return (
     <footer className="bg-black text-gray-300 py-10 relative">
       <div className="inset-0 bg-black flex flex-col items-center justify-center space-y-8 my-4">
